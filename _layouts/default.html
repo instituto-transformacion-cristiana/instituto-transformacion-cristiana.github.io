@@ -1,17 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="assets/stylesheets/main.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
-
 <body>
-    <header></header>
-    <div>
+    {% include header.html %}
+    <section class="w-full-container">
+        <video autoplay name="media">
+            <source src="/assets/videos/cumbre-video.webm" type="video/webm">
+        </video>
+
+        <div class="container">
+            <h1>Cosmovisión bíblica<br>que transforma</h1>
+        </div>
+    </section>
+    <section class="container quotes">
+        <div class="blue-card--container">
+            <div class="container quotes-inner">
+                <h3>Cosmovisión bíblica que transforma</h3>
+                <p>
+                    El instituto de transformación cristiana integra surge ante la necesidad
+                    de impactar las diferentes esferas de la sociedad a través de la difusión
+                    de principios de cosmovisión bíblica, con el fin de transformarla para la
+                    gloria de Dios.<br>
+                    <br>
+                    Todo esto enseñando principios de cosmovisión bíblica que transforman
+                    todas las esferas de la sociedad.
+                </p>
+            </div>
+        </div>
+        <div class="block">
+            <div class="container quotes-inner">
+                <h4>Lo que creemos</h4>
+                <div class="quote--list">
+                    <h3>Filosofía</h3>
+                    <p>
+                        La cosmovisión bíblica, la sabiduría de Dios revelada en la estructura y
+                        el orden de la creación, interpretada a través de los principios bíblicos;
+                        es la fuente para crear familias, comunidades, sociedades y naciones mas
+                        justas, productivas y ordenadas, para el bienestar de todos sus habitantes.
+                    </p>
+                    <h3>Visión</h3>
+                    <p>
+                        La tierra será llena del conocimiento de la gloria de Dios como las aguas
+                        cubren el mar.
+                    </p>
+                    <h3>Misión</h3>
+                    <p>
+                        Enseñar y capacitar demostrando la aplicación de la cosmovisión bíblica a
+                        la población general, a través de grupos interesados e instituciones, para
+                        transformar las diferentes esferas de la cultura y mejorar el estado general
+                        de toda la nación.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- <div>
         <div class="video-container">
             <video src="assets/videos/cumbre-video.webm" controls></video>
         </div>
@@ -137,7 +186,6 @@
             </div>
         </div>
     </div>
-    <footer></footer>
+    <footer></footer> -->
 </body>
-
 </html>
