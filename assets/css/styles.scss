@@ -147,7 +147,10 @@ body {
 
 header {
     background-color: white;
-
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    
     & > .container {
         padding-top: 0.5rem;
         padding-bottom: 0.5rem;
@@ -161,24 +164,53 @@ header {
         }
         .navbar--button {
             display: block;
+
+            img.close { display: none; }
+            img.open { display: block; }
         }
         .navbar--container {
-            display: none;
-            align-items: center;
             gap: 24px;
-
+            overflow: hidden;
+            transition: height 100ms ease-in-out;
+            background-color: white;
+            position: absolute;
+            top: 67px;
+            left: 0;
+            height: 0;
+            width: 100%;
+            
+                
+            .links {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                padding-top: 2rem;
+                padding-bottom: 1rem;
+            }
             a {
                 font-style: 400;
                 font-size: 16px;
                 line-height: 1.5em;
                 text-decoration: none;
                 color: $color-black;
+                padding: 1rem;
             }
+        }
+
+        .navbar--button:focus {
+            img.close { display: block; }
+            img.open { display: none; }
+        }
+        .navbar--button:focus + .navbar--container {
+            height: 216px;
+            pointer-events: all;
         }
     }
     @media (min-width: $breakpoint-lg) {
         padding-top: 1rem;
         padding-bottom: 1rem;
+        
+        
         & > .container {
             img {
                 width: 72px;
@@ -189,6 +221,19 @@ header {
             }
             .navbar--container {
                 display: flex;
+                position: static;
+                height: max-content;
+                width: max-content;
+
+                .links {
+                    position: static;
+                    flex-direction: row;
+                    gap: 24px;
+                    padding: 0;
+                }
+                a {
+                    padding: 0;
+                }
             }
         }
     }
