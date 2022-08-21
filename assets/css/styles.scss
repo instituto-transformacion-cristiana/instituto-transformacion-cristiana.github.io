@@ -198,6 +198,8 @@ header {
         }
 
         .navbar--button:focus {
+            pointer-events: none;
+            
             img.close { display: block; }
             img.open { display: none; }
         }
