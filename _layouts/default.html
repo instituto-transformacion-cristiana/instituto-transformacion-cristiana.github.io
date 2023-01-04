@@ -12,10 +12,12 @@
 <body>
     {% include header.html %}
     <section class="w-full-container video">
-        <video autoplay loop muted poster="/assets/images/video_poster_2.webp">
-            <source src="/assets/videos/cumbre-video-compressed.webm" type="video/webm">
-        </video>
-        <div class="container">
+        <div class="video-container">
+            <video autoplay loop muted playsinline poster="/assets/images/video_poster_2.webp">
+                <source src="/assets/videos/cumbre-video-compressed-2.mov" type="video/mp4">
+            </video>
+        </div>
+        <div class="container title-container">
             <h1>Cosmovisión bíblica<br>que transforma</h1>
         </div>
     </section>
