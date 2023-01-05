@@ -13,10 +13,9 @@
     {% include header.html %}
     <section class="w-full-container video">
         <div class="video-container">
-            <video autoplay loop muted playsinline poster="/assets/images/video_poster_2.webp">
-                <source src="/assets/videos/cumbre-video-compressed.webm" type="video/webm">
-                <source src="/assets/videos/cumbre-video-compressed-2.mov" type="video/mp4">
-            </video>
+            <!-- <iframe id="video-iframe" src="https://www.youtube.com/embed/rHKohih5on8?autoplay=1&mute=1&playlist=rHKohih5on8&loop=1&vq=hd1080" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+            <img id="poster-img" src="/assets/images/video_poster_2.webp">
+            <div id="ytplayer"></div>
         </div>
         <div class="container title-container">
             <h1>Cosmovisión bíblica<br>que transforma</h1>
@@ -184,5 +183,39 @@
         </div>
     </section>
     {% include footer.html %}
+    <script>
+        // Load the IFrame Player API code asynchronously.
+        let tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/player_api";
+        let firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        // Replace the 'ytplayer' element with an <iframe> and
+        // YouTube player after the API code downloads.
+        let player;
+        function onYouTubePlayerAPIReady() {
+            // Hide the poster image when iframe loads
+            document.getElementById('poster-img').style.display = 'none';
+            player = new YT.Player('ytplayer', {
+                videoId: 'rHKohih5on8',
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+            event.target.mute();
+            event.target.playVideo();
+        }
+
+        function onPlayerStateChange(event) {
+            if (event.data == YT.PlayerState.ENDED) {
+                event.target.playVideo();
+            }
+        }
+
+    </script>
 </body>
 </html>
