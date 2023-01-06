@@ -193,8 +193,6 @@
         // YouTube player after the API code downloads.
         let player;
         function onYouTubePlayerAPIReady() {
-            // Hide the poster image when iframe loads
-            document.getElementById('poster-img').style.display = 'none';
             player = new YT.Player('ytplayer', {
                 videoId: 'rHKohih5on8',
                 events: {
@@ -207,6 +205,8 @@
         function onPlayerReady(event) {
             event.target.mute();
             event.target.playVideo();
+            // Hide the poster image when iframe loads
+            document.getElementById('poster-img').style.display = 'none';
         }
 
         function onPlayerStateChange(event) {
