@@ -20,6 +20,11 @@ $color-blue-100: #1C79B8;
 $color-blue-200: #2F80ED;
 $color-green-100: #8EC043;
 
+$banner-btn-color: #ffffff;
+$banner-btn-hover-color: #eef2ff;
+$banner-container-color: #4f46e5;
+$banner-icon-bg-color: #3730a3;
+
 // FONTS:
 @font-face {
     font-family: "GillSans";
@@ -604,7 +609,7 @@ footer {
 }
 
 .banner-container {
-    background-color: $color-blue-100;
+    background-color: $banner-container-color;
 }
 
 .banner {
@@ -631,26 +636,26 @@ footer {
 
 .banner-icon {
     padding: 8px;
-    background-color: #66a6d1;
+    background-color: $banner-icon-bg-color;
     border-radius: 8px;
     height: 40px;
     width: 40px;
 }
 
 .learn-more-btn {
-    background: #A020F0;
+    background: $banner-btn-color;
     border: none;
     padding: 8px;
     padding-bottom: 5px;
     font-size: 18px;
     font-weight: 500;
     border-radius: 8px;
-    color: white;
+    color: $banner-container-color;
     text-decoration: none;
 }
 
 .learn-more-btn:hover {
-    background-color: #a020f0bd;
+    background-color: $banner-btn-hover-color;
 }
 
 .banner-actions {
