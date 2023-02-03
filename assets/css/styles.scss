@@ -20,6 +20,11 @@ $color-blue-100: #1C79B8;
 $color-blue-200: #2F80ED;
 $color-green-100: #8EC043;
 
+$banner-btn-color: #ffffff;
+$banner-btn-hover-color: #eef2ff;
+$banner-container-color: #4f46e5;
+$banner-icon-bg-color: #3730a3;
+
 // FONTS:
 @font-face {
     font-family: "GillSans";
@@ -152,6 +157,7 @@ header {
     z-index: 10;
     
     & > .container {
+        position: relative;
         padding-top: 0.5rem;
         padding-bottom: 0.5rem;
         display: flex;
@@ -209,11 +215,10 @@ header {
         }
     }
     @media (min-width: $breakpoint-lg) {
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        
         
         & > .container {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
             img {
                 width: 72px;
                 height: 72px;
@@ -600,5 +605,72 @@ footer {
         .grid--image-block + .grid--text-block {
             grid-column-start: 8;
         }
+    }
+}
+
+.banner-container {
+    background-color: $banner-container-color;
+}
+
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 8px 0;
+    flex-direction: column;
+
+    @media (min-width: $breakpoint-sm) {
+        flex-direction: row;
+    }
+}
+
+.banner-text {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.banner-icon {
+    padding: 8px;
+    background-color: $banner-icon-bg-color;
+    border-radius: 8px;
+    height: 40px;
+    width: 40px;
+}
+
+.learn-more-btn {
+    background: $banner-btn-color;
+    border: none;
+    padding: 8px;
+    padding-bottom: 5px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 8px;
+    color: $banner-container-color;
+    text-decoration: none;
+}
+
+.learn-more-btn:hover {
+    background-color: $banner-btn-hover-color;
+}
+
+.banner-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    width: 100%;
+
+    a {
+        width: inherit;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    @media (min-width: $breakpoint-sm) {
+        width: unset;
     }
 }
