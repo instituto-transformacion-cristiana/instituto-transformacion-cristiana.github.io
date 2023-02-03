@@ -209,11 +209,10 @@ header {
         }
     }
     @media (min-width: $breakpoint-lg) {
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        
         
         & > .container {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
             img {
                 width: 72px;
                 height: 72px;
@@ -613,6 +612,11 @@ footer {
     justify-content: space-between;
     gap: 16px;
     padding: 8px 0;
+    flex-direction: column;
+
+    @media (min-width: $breakpoint-sm) {
+        flex-direction: row;
+    }
 }
 
 .banner-text {
@@ -633,44 +637,34 @@ footer {
 }
 
 .learn-more-btn {
-    background: white;
+    background: #A020F0;
     border: none;
     padding: 8px;
     padding-bottom: 5px;
     font-size: 18px;
     font-weight: 500;
     border-radius: 8px;
-    color: $color-blue-100;
+    color: white;
     text-decoration: none;
 }
 
 .learn-more-btn:hover {
-    background-color: #dfdfdf;
+    background-color: #a020f0bd;
 }
 
 .banner-actions {
     display: flex;
     gap: 8px;
     align-items: center;
-}
+    width: 100%;
 
-#close-banner-btn {
-    background: none;
-    color: white;
-    font-size: 24px;
-    line-height: 22px;
-    border: none;
-    width: 28px;
-    height: 28px;
-    padding: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 4px;
-    cursor: pointer;
-
-    &:hover {
-        background: #ffffff54;
+    a {
+        width: inherit;
+        text-align: center;
+        white-space: nowrap;
     }
 
+    @media (min-width: $breakpoint-sm) {
+        width: unset;
+    }
 }
