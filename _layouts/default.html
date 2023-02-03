@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
+    {% include banner.html %}
     {% include header.html %}
     <section class="w-full-container video">
         <video autoplay loop muted playsinline poster="/assets/images/video_poster_2.webp">
@@ -182,5 +183,11 @@
         </div>
     </section>
     {% include footer.html %}
+    <script>
+        function closeBanner() {
+            const bannerContainer = document.getElementById('banner-container');
+            bannerContainer.style.display = 'none';
+        }
+    </script>
 </body>
 </html>
